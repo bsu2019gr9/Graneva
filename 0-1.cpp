@@ -28,21 +28,25 @@ int main()
 double Exp(double x, double eps)
 {
 	double Sum = 1, Term = 1;
-	for (int i = 1; fabs(Term) > eps; i++)
+	int i = 1;
+	while (fabs(Term) > eps)
 	{
 		Term = Term * x / i;
 		Sum = Sum + Term;
+		i++;
 	}
 	return Sum;
 }
 double Cos(double x, double eps)
 {
 	double Sum = 1, Term = 1, n=0;
-	for (int i = 1; fabs(Term) > eps; i++)
+	int i = 1;
+	while (fabs(Term) > eps)
 	{
 		Term = -(Term * x * x) / ((2*n+2)*(2*n+1)); 
 			Sum = Sum + Term;
 		n++;
+		i++;
 	}
 	return Sum;
 }
